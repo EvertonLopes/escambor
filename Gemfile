@@ -31,6 +31,7 @@ gem 'rails-i18n'
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+gem 'bootstrap_sb_admin_base_v2'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -40,11 +41,6 @@ gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
-gem 'rails-i18n'
-gem 'devise'
-gem 'devise-i18n'
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
