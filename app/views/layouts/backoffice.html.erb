@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Escambor</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'backoffice' %>
-    <%= javascript_include_tag 'backoffice' %>
-  </head>
+<head>
 
-  <body>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Everton L. Costa">
+
+  <title>Escambor</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application' %>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag    'backoffice' %>
+  <%= javascript_include_tag 'backoffice' %>
+
+</head>
+
+<body id="page-top">
     <%= yield %>
-  </body>
+
+</body>
+
 </html>

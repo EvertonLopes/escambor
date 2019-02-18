@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'rails-i18n'
 gem 'devise'
 gem 'devise-i18n'
+gem 'jquery'
+gem 'jquery-rails'
 gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 gem 'bootstrap_sb_admin_base_v2'
 
