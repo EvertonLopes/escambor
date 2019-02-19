@@ -3,6 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+
+gem 'rails-i18n'
+gem 'devise'
+gem 'devise-i18n'
+gem 'jquery'
+gem 'jquery-rails'
+gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+gem 'bootstrap_sb_admin_base_v2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
@@ -26,15 +35,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-gem 'rails-i18n'
-gem 'devise'
-gem 'devise-i18n'
-gem 'jquery'
-gem 'jquery-rails'
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
-gem 'bootstrap_sb_admin_base_v2'
-
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
