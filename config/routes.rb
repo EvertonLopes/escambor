@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     devise_for :members
     
     root 'site/home#index'
+    get 'backoffice', to: 'backoffice/dashboard#index'
 end
