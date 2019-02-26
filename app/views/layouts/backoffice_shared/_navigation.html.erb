@@ -39,7 +39,9 @@
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <%= link_to @backoffice do %>
+                        <i class="fa fa-dashboard fa-fw"></i> Dashboard
+                    <% end %>
                 </li>
             </ul>
         </div>
