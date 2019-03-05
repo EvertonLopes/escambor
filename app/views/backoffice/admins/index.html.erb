@@ -1,10 +1,10 @@
-<h1 class="page-header">Categoria</h1>
+<h1 class="page-header">Administrador</h1>
 
 <div class="col-lg-12">
 	<div class="panel panel-default" >
 		<div class="panel-heading" >
-			Listando Categoria
-			<%= link_to new_backoffice_category_path, 
+			Listando Administradores
+			<%= link_to new_backoffice_admin_path, 
 					class:"btn btn-success btn-circle navbar-right", style:"margin:-5px -5px 0 0" do %>
 					<i class="fa fa-plus"></i>
 			<% end %>
@@ -16,17 +16,17 @@
 					<thead>
 						<tr>
 							<th>Id</th>
-							<th>Descrição</th>
+							<th>Email</th>
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-						<% @categories.each do |category| %>
+						<% @admins.each do |admin| %>
 							<tr>
-								<td><%= category.id %></td>
-								<td><%= category.description %></td>
+								<td><%= admin.id %></td>
+								<td><%= admin.email %></td>
 								<td>
-									<%= link_to edit_backoffice_category_path(category), class:"btn btn-primary btn-circle" do %> 
+									<%= link_to edit_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %> 
 											<i class="fa fa-edit"></i>
 									<%  end %>
 									<button type="button" class="btn btn-danger btn-circle" disabled="disabled">
