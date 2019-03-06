@@ -2,9 +2,9 @@
 
 require 'test_helper'
 
-class Backoffice::CategoriesControllerTest < ActionDispatch::IntegrationTest
+class Backoffice::AdminsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
-    get backoffice_categories_index_url
+    get backoffice_admins_index_url
     assert_response :success
   end
 end

@@ -1,7 +1,5 @@
-class Backoffice::DashboardController < ApplicationController
-  before_action :authenticate_admin!
-  layout "backoffice"
+# frozen_string_literal: true
 
-  def index
-  end
+class Backoffice::DashboardController < BackofficeController
+  def index; end
 end
