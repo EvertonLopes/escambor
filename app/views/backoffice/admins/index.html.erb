@@ -29,9 +29,11 @@
 									<%= link_to edit_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %> 
 											<i class="fa fa-edit"></i>
 									<%  end %>
-									<button type="button" class="btn btn-danger btn-circle" disabled="disabled">
+									<%= link_to backoffice_admin_path(admin), 
+											method: :delete, data: {confirm: 'Tem certeza?'}, 
+											class:'btn btn-danger btn-circle' do %>
 											<i class="fa fa-minus"></i>
-									</button>
+									<% end %>
 								</td>
 							</tr>
 						<% end %>

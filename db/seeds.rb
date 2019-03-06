@@ -9,6 +9,7 @@
 #
 #  movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #  Character.create(name: 'Luke', movie: movies.first)
+
 categories =
   [
     'Animais e acessórios',
@@ -23,16 +24,16 @@ categories =
     'Empregos e negócios'
   ]
 
+puts 'Loading: Creating categories...'
 categories.each do |category|
   Category.find_or_create_by(description: category)
 end
+puts 'Successfully: Categories created!'
 
-puts 'Categories successfully registered!!!'
-
+puts 'Loading: Creating administrator...'
 Admin.create!(
   email: 'admin@admin.com',
   password: '123456',
   password_confirmation: '123456'
 )
-
-puts 'Administrador successfully registered!!!'
+puts 'Successfully: Administrador created!'

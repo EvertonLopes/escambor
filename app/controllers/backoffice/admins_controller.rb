@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Backoffice::AdminsController < BackofficeController
-  before_action :set_admin, only: %i[edit update]
+  before_action :set_admin, only: %i[edit update destroy]
 
   def index
     @admins = Admin.all
@@ -19,7 +19,7 @@ class Backoffice::AdminsController < BackofficeController
       redirect_to backoffice_admins_path,
                   notice: "Sucesso ao criar: Administrador (#{@admin.email})!"
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -36,7 +36,17 @@ class Backoffice::AdminsController < BackofficeController
       redirect_to backoffice_admins_path,
                   notice: "Sucesso ao alterar: Administrador (#{@admin.email})!"
     else
-      render 'edit'
+      render :edit
+    end
+  end
+
+  def destroy
+    admin_email = @admin.email
+    if @admin.destroy
+      redirect_to backoffice_admins_path,
+                  notice: "Sucesso ao excluír: Administrador (#{admin_email})!"
+    else
+      render :index
     end
   end
 
