@@ -15,19 +15,20 @@ class Backoffice::CategoriesController < BackofficeController
   def edit; end
 
   def create
-    @category = Category.new(params_category)
-    if @category.save
-      redirect_to backoffice_categories_path,
-                  notice: "Sucesso ao Criar: A categoria (#{@category.description})!"
-    else
+    @category = CategoryService.create(params_category)
+
+    if @category.errors.any?
       render 'new'
+    else
+      redirect_to backoffice_categories_path,
+                  notice: "Sucesso ao Criar: Categoria (#{@category.description})!"
     end
   end
 
   def update
     if @category.update(params_category)
       redirect_to backoffice_categories_path,
-                  notice: "Sucesso ao Alterar: A categoria (#{@category.description})!"
+                  notice: "Sucesso ao Alterar: Categoria (#{@category.description})!"
     else
       render 'edit'
     end
