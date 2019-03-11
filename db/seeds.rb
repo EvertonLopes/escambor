@@ -32,6 +32,7 @@ puts 'Successfully: Categories created!'
 
 puts 'Loading: Creating administrator...'
 Admin.create!(
+  name: 'Belchior Alcantara',
   email: 'admin@admin.com',
   password: '123456',
   password_confirmation: '123456'
