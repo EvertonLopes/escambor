@@ -8,11 +8,13 @@ ruby '2.5.1'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'devise'
 gem 'devise-i18n'
-gem 'faker'
 gem 'jquery'
 gem 'jquery-rails'
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-notifyjs'
+  gem 'rails-assets-bootbox'
+end
 gem 'rails-i18n'
 gem 'rubocop', require: false
 
@@ -62,6 +64,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'faker'
 end
 
 group :test do
