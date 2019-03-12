@@ -3,4 +3,4 @@
     admin:
       role:
         full_access: Acesso completo
-        restrict_access: Acesso restrito
+        restricted_access: Acesso restrito

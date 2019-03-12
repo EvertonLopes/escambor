@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 class Admin < ApplicationRecord
-  enum role: %i[full_access restrict_access]
+  ROLES = { full_access: 0, restricted_access: 1 }.freeze
 
-  scope :with_full_access, -> { where(role: 'full_access') }
+  enum role: ROLES
+
+  scope :with_full_access, -> { where(role: ROLES[:full_access]) }
+  scope :with_restricted_access, -> { where(role: ROLES[:restricted_access]) }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
