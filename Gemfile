@@ -15,6 +15,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-notifyjs'
 end
 gem 'rails-i18n'
+gem 'enum_help'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
