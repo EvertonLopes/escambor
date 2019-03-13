@@ -41,17 +41,17 @@
 									<%= link_to edit_backoffice_admin_path(admin), class:"btn btn-primary btn-circle" do %> 
 										<i class="fa fa-edit"></i>
 									<%  end %>
-									<% if current_admin.id == admin.id %>
-										<button class="btn btn-danger btn-circle" disabled="disabled">
-											<i class="fa fa-minus"></i>
-										</button>
-									<% else %>
+									<% if (current_admin.id != admin.id) && policy(@admins).destroy? %>
 										<%= link_to backoffice_admin_path(admin),
 																data: {confirm: t('messages.confirm_with', item: admin.name)},
 																method: :delete,
 																class:'btn btn-danger btn-circle' do %>
 											<i class="fa fa-minus"></i>										
 										<% end %>
+									<% else %>
+										<button class="btn btn-danger btn-circle" disabled="disabled">
+											<i class="fa fa-minus"></i>
+										</button>
 									<% end %>
 								</td>
 							</tr>

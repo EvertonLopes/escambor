@@ -2,7 +2,7 @@
 
 class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only: %i[edit update destroy]
-  after_action :verify_authorized, only: :new
+  after_action :verify_authorized, only: %i[new destroy]
   after_action :verify_policy_scoped, only: :index
 
   def index
@@ -29,14 +29,6 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def update
-    passwd = params[:admin][:password]
-    passwd_confirmation = params[:admin][:password_confirmation]
-
-    if passwd.blank? && passwd_confirmation.blank?
-      params[:admin].delete(:password)
-      params[:admin].delete(:password_confirmation)
-    end
-
     if @admin.update(params_admin)
       redirect_to backoffice_admins_path,
                   notice: "Sucesso ao alterar: Administrador (#{@admin.email})!"
@@ -46,6 +38,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def destroy
+    auhotize @admin
     admin_email = @admin.email
     if @admin.destroy
       redirect_to backoffice_admins_path,
@@ -62,6 +55,18 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def params_admin
+    passwd = params[:admin][:password]
+    passwd_confirmation = params[:admin][:password_confirmation]
+
+    check_password_blank(passwd, passwd_confirmation)
+
     params.require(:admin).permit(policy(@admin).permitted_attributes)
+  end
+
+  def check_password_blank(pword, pword_confirm)
+    if pword.blank? && pword_confirm.blank?
+      params[:admin].delete(:password)
+      params[:admin].delete(:password_confirmation)
+    end
   end
 end
