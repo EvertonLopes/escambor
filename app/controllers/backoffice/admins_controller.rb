@@ -4,13 +4,14 @@ class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only: %i[edit update destroy]
 
   def index
-    #@admins = Admin.all
-
-    @admins = Admin.with_restricted_access
+    # @admins = Admin.all
+    # @admins = Admin.with_restricted_access
+    @admins = policy_scope(Admin)
   end
 
   def new
     @admin = Admin.new
+    authorize @admin
   end
 
   def edit; end
