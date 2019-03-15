@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Class main of the controller
 class ApplicationController < ActionController::Base
   include Pundit
 

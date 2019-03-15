@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# User Mailer
 class AdminMailer < ApplicationMailer
   def update_email(current_admin, admin)
     @current_admin = current_admin

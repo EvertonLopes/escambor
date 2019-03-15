@@ -1,5 +1,7 @@
-class AdminPolicy < ApplicationPolicy
+# frozen_string_literal: true
 
+# Permission for Admin
+class AdminPolicy < ApplicationPolicy
   def new?
     user.full_access?
   end
@@ -20,6 +22,7 @@ class AdminPolicy < ApplicationPolicy
     end
   end
 
+  # Return Scope
   class Scope < Scope
     def resolve
       if user.full_access?
