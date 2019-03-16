@@ -1,8 +1,10 @@
 $(function(){
   $('h4.modal-title').text('Mensagem para: <%= @admin.name %>');
-  $('#recipient-name').val('<%= @admin.email %>');
+  $('#recipient-text').val('<%= @admin.email %>');
+
   $('#sendMailModal').modal();
+
   $('#sendMailModal').on('shown.bs.modal', function () {
-    $('#message-text').trigger('focus')
+    $('#subject-text').trigger('focus')
   })
 });
