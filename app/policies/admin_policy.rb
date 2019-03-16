@@ -14,14 +14,6 @@ class AdminPolicy < ApplicationPolicy
     user.full_access?
   end
 
-  def permitted_attributes
-    if user.full_access?
-      %i[name email role password password_confirmation]
-    else
-      %i[name email password password_confirmation]
-    end
-  end
-
   # Return Scope
   class Scope < Scope
     def resolve
