@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 namespace :utils do
-  desc 'Cria Administradores Faker.'
+  desc 'Create Administrator faker.'
   task generate_admins: :environment do
     puts 'Loading: Creating generic administrators...'
-    5.times do |_administrators|
+    10.times do |_administrators|
       Admin.create!(
         name: Faker::Name.name,
         email: Faker::Internet.email,
@@ -14,5 +14,19 @@ namespace :utils do
       )
     end
     puts 'Successfully: Administrators generic created!'
+  end
+
+  desc 'Create Ads faker.'
+  task generate_ads: :environment do
+    puts 'Loading: Creating generic ads...'
+    100.times do |_ads|
+      Ads.create!(
+        title: Faker::Lorem.sentece(3),
+        text: Faker::Lorem.paragraph(3),
+        category: Category.all.sample,
+        member: Member.all.sample
+      )
+    end
+    puts 'Successfully: Ads generic created!'
   end
 end
