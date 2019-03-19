@@ -14,6 +14,10 @@ class AdminPolicy < ApplicationPolicy
     user.full_access?
   end
 
+  def permitted_attributes
+    %i[name email password password_confirmation] unless user.full_access?
+  end
+
   # Return Scope
   class Scope < Scope
     def resolve

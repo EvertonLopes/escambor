@@ -21,8 +21,8 @@ namespace :utils do
     puts 'Loading: Creating generic ads...'
     100.times do |_ads|
       Ads.create!(
-        title: Faker::Lorem.sentece(3),
-        text: Faker::Lorem.paragraph(3),
+        title: Faker::Lorem.sentece([2, 3, 4, 5].sample),
+        text: Faker::Lorem.paragraph(Random.rand(3)),
         category: Category.all.sample,
         member: Member.all.sample
       )
